@@ -16,8 +16,8 @@ services:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
       ## uncomment next line to set an admin secret
-      HASURA_GRAPHQL_ADMIN_SECRET: flutterando
-      HASURA_GRAPHQL_JWT_SECRET: '{"type":"HS256", "key": "vdf0r8yt982erg8rt944rc23xfdfw34re23f23"}'
+      #HASURA_GRAPHQL_ADMIN_SECRET: flutterando
+      #HASURA_GRAPHQL_JWT_SECRET: '{"type":"HS256", "key": "vdf0r8yt982erg8rt944rc23xfdfw34re23f23"}'
   auth-server:
     build: auth/.
     # ports:
@@ -44,6 +44,8 @@ services:
     ports:
       - 80:80
       - 443:443
+  
 volumes:
   db_data:
   auth:
+  images:

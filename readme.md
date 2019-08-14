@@ -11,7 +11,7 @@ For perfect operation, use the following user table as a basis
 CREATE TABLE users (
   id int pk not null unique,
   name text,
-  mail int not null unique,
+  mail text not null unique,
   password text
 )
 

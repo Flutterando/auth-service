@@ -48,4 +48,3 @@ services:
 volumes:
   db_data:
   auth:
-  images:

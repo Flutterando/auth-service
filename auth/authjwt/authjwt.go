@@ -19,7 +19,7 @@ type user struct {
 	Id          int    `json:"id"`
 	Name        string `json:"name"`
 	Mail        string `json:"mail"`
-	Password    string `json:"password"`
+	password    string
 	Info_date   string `json:"info_date"`
 	Photo       string `json:"photo"`
 	Github_user string `json:"github_user"`
@@ -61,7 +61,7 @@ var GetTokenHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Reque
 			SELECT *
 			FROM users
 			WHERE mail = $1 AND password = $2;
-		`, mail, pass).Scan(&(u.Id), &(u.Name), &(u.Mail), &(u.Password), &(u.Info_date), &(u.Photo), &(u.Github_user))
+		`, mail, pass).Scan(&(u.Id), &(u.Name), &(u.Mail), &(u.password), &(u.Info_date), &(u.Photo), &(u.Github_user))
 	if err != nil {
 		w.WriteHeader(http.StatusUnauthorized)
 		fmt.Println(err)

@@ -31,7 +31,7 @@ $ docker-compose up -d
 
  - `/v1/gettoken`
 ```bash
-    $ curl -X POST /auth/v1/gettoken -H 'Authorization: Basic BASE64(USER:PASS)'
+    $ curl -X POST /auth/v1/gettoken -H 'Authorization: Basic USER:PASS'
 ```
 
  - `/v1/check`  

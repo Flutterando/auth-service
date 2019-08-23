@@ -58,7 +58,7 @@ var GetTokenHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Reque
 
 	var u user
 	err = d.QueryRow(`
-			SELECT *
+			SELECT id, name, mail, password, info_date, photo, github_user
 			FROM users
 			WHERE mail = $1 AND password = $2;
 		`, mail, pass).Scan(&(u.Id), &(u.Name), &(u.Mail), &(u.password), &(u.Info_date), &(u.Photo), &(u.Github_user))

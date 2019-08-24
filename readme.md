@@ -39,6 +39,16 @@ $ docker-compose up -d
     $ curl -X POST /auth/v1/check -H 'Authorization: Bearer TOKEN_JWT'
 ```
 
+ - `/v1/checkMail`  
+```bash
+    $ curl -X POST /auth/v1/checkMail -H 'Content-Type: application/json' -d '{"name":"João Teste","mail":"joao@test.com", ,"code": 12345678}'
+```
+
+ - `/v1/register`  
+```bash
+    $ curl -X POST /auth/v1/register -H 'Content-Type: application/json' -d '{"name":"João Teste","mail":"joao@test.com", ,"password": "md5-password", "photo": "http://upload-image", "github_user": ""}'
+```
+
  - `/v1/upload` 
 ```bash
     $ curl -X POST /auth/v1/upload -H 'content-type: multipart/form-data;' -F file=FILE_PATH_ON_CLIENT

@@ -23,6 +23,8 @@ func main() {
 	r := mux.NewRouter()
 	r.Handle("/v1/check", authjwt.JwtMiddleware.Handler(checkauth))
 	r.Handle("/v1/gettoken", authjwt.GetTokenHandler)
+	r.Handle("/v1/register", authjwt.GetRegisterHandler)
+	r.Handle("/v1/checkMail", authjwt.CheckMailHandler)
 	r.HandleFunc("/v1/upload", uploadFile)
 	r.HandleFunc("/v1/uploads/{img}", webHandler)
 
@@ -91,6 +93,7 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 
 	jsonReturn := make(map[string]string)
 	jsonReturn["file"] = tempFile.Name()
+
 	// fmt.Fprintf(w, jsonReturn)
 	js, err := json.Marshal(jsonReturn)
 	w.Header().Set("Content-Type", "application/json")

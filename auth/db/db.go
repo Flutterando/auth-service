@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-// Connect connect mysql
+// Connect to postgres
 func Connect() (*sql.DB, error) {
 	user := os.Getenv("POSTGRES_USER")
 	host := os.Getenv("POSTGRES_HOST")
@@ -17,7 +17,7 @@ func Connect() (*sql.DB, error) {
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
 		"password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
-	
+
 	db, err := sql.Open("postgres", psqlInfo)
 	if err != nil {
 		return nil, err

@@ -20,10 +20,10 @@ import (
 
 //User information
 type User struct {
-	ID             int    `json:"id"`
-	Name           string `json:"name"`
-	Mail           string `json:"mail"`
-	Password       string
+	ID             int            `json:"id"`
+	Name           string         `json:"name"`
+	Mail           string         `json:"mail"`
+	Password       string         `json:"-"`
 	InfoDate       string         `json:"info_date"`
 	Photo          string         `json:"photo,omitempty"`
 	GithubUser     string         `json:"github_user,omitempty"`
